@@ -22,10 +22,6 @@ public class FolderDAO {
         return false;
     }
 
-    public int deleteAllFolders() {
-        return SugarRecord.deleteAll(Folder.class);
-    }
-
     public long updateFolder(Folder folder) {
         return SugarRecord.update(folder);
     }
