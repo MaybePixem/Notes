@@ -11,10 +11,6 @@ public class FolderDAO {
         return SugarRecord.listAll(Folder.class);
     }
 
-    public Folder getFolderById(int id) {
-            return SugarRecord.findById(Folder.class, id);
-    }
-
     public boolean deleteFolder(Folder folder) {
         if (folder != null) {
             return SugarRecord.delete(folder);
@@ -22,7 +18,4 @@ public class FolderDAO {
         return false;
     }
 
-    public long updateFolder(Folder folder) {
-        return SugarRecord.update(folder);
-    }
 }

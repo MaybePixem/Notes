@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.notes.R;
+import com.example.notes.data.FolderDAO;
 import com.example.notes.model.Folder;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class FolderEditListAdapter extends RecyclerView.Adapter<FolderEditListAd
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView nameTextView;
         public Button deleteBtn;
-
+        private FolderDAO folderDAO = new FolderDAO();
         public ViewHolder(View itemView) {
             super(itemView);
 
@@ -30,7 +31,7 @@ public class FolderEditListAdapter extends RecyclerView.Adapter<FolderEditListAd
                 int position = getAdapterPosition();
                 Folder folder = folderList.get(position);
                 folderList.remove(folder);
-                folder.delete();
+                folderDAO.deleteFolder(folder);
                 notifyItemRemoved(position);
             });
         }
@@ -49,7 +50,7 @@ public class FolderEditListAdapter extends RecyclerView.Adapter<FolderEditListAd
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View folderView = inflater.inflate(R.layout.folder_edit_view, parent, false);
+        View folderView = inflater.inflate(R.layout.folder_edit_row, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(folderView);
         return viewHolder;

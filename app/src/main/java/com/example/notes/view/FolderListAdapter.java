@@ -39,7 +39,7 @@ public class FolderListAdapter extends RecyclerView.Adapter<FolderListAdapter.Vi
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Inflate the custom layout
-        View folderView = inflater.inflate(R.layout.folder_view, parent, false);
+        View folderView = inflater.inflate(R.layout.folder_list_row, parent, false);
 
         // Return a new holder instance
         ViewHolder viewHolder = new ViewHolder(folderView);
