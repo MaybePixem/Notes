@@ -9,14 +9,24 @@ public class Note extends SugarRecord {
     private String title;
     private String text;
     private List<String> imagePaths;
+    private String folder;
 
     public Note() {
     }
 
-    public Note(String title, String text, List<String> imagePaths) {
+    public Note(String title, String text, List<String> imagePaths, String folder) {
         this.title = title;
         this.text = text;
         this.imagePaths = imagePaths;
+        this.folder = folder;
+    }
+
+    public String getFolder() {
+        return folder;
+    }
+
+    public void setFolder(String folder) {
+        this.folder = folder;
     }
 
     public String getTitle() {

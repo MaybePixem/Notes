@@ -7,14 +7,12 @@ import java.util.List;
 public class Folder extends SugarRecord {
 
     private String name;
-    private List<Note> notes;
 
     public Folder() {
     }
 
-    public Folder(String name, List<Note> notes) {
+    public Folder(String name) {
         this.name = name;
-        this.notes = notes;
     }
 
     public String getName() {
@@ -25,11 +23,4 @@ public class Folder extends SugarRecord {
         this.name = name;
     }
 
-    public List<Note> getNotes() {
-        return notes;
-    }
-
-    public void setNotes(List<Note> notes) {
-        this.notes = notes;
-    }
 }
