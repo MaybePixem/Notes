@@ -50,7 +50,7 @@ public class FolderEditListAdapter extends RecyclerView.Adapter<FolderEditListAd
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View folderView = inflater.inflate(R.layout.folder_edit_view, parent, false);
+        View folderView = inflater.inflate(R.layout.folder_edit_row, parent, false);
 
         ViewHolder viewHolder = new ViewHolder(folderView);
         return viewHolder;
