@@ -22,10 +22,6 @@ public class NoteDAO {
         return false;
     }
 
-    public int deleteAllNotes() {
-        return SugarRecord.deleteAll(Note.class);
-    }
-
     public long updateNote(Note Note) {
         return SugarRecord.update(Note);
     }
