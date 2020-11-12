@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
+import android.view.KeyEvent;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SearchView;
 
 import com.example.notes.R;
 import com.example.notes.data.FolderDAO;
@@ -20,6 +23,7 @@ import com.orm.SchemaGenerator;
 import com.orm.SugarContext;
 import com.orm.SugarDb;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FolderActivity extends AppCompatActivity {
@@ -47,22 +51,48 @@ public class FolderActivity extends AppCompatActivity {
 
         final FloatingActionButton createNewNoteBtn = findViewById(R.id.createNewNoteBtn);
         createNewNoteBtn.setOnClickListener(v -> handleCreateNewNoteBtnOnClick());
+
+        SearchView searchView = findViewById(R.id.searchView);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                updateFolderList(query);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                updateFolderList(newText);
+                return true;
+            }
+        });
+
         displayList(allFolders);
+    }
+
+    private void updateFolderList(String query) {
+        List<Folder> newFolderList = new ArrayList<>();
+        for (Folder folder : folderDAO.getAllFolders()) {
+            if (folder.getName().contains(query)) {
+                newFolderList.add(folder);
+            }
+        }
+        displayList(newFolderList);
     }
 
 
     private void displayList(List<Folder> folderList) {
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        FolderListAdapter folderListAdapter = new FolderListAdapter(folderList);
-        recyclerView.setAdapter(folderListAdapter);
+        if (editFlag) {
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            FolderEditListAdapter folderEditListAdapter = new FolderEditListAdapter(folderList);
+            recyclerView.setAdapter(folderEditListAdapter);
+        } else {
+            recyclerView.setLayoutManager(new LinearLayoutManager(this));
+            FolderListAdapter folderListAdapter = new FolderListAdapter(folderList);
+            recyclerView.setAdapter(folderListAdapter);
+        }
     }
-
-    private void displayEditList(List<Folder> folderList) {
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        FolderEditListAdapter folderEditListAdapter = new FolderEditListAdapter(folderList);
-        recyclerView.setAdapter(folderEditListAdapter);
-    }
-
 
     private void handleCreateNewNoteBtnOnClick() {
     }
@@ -80,11 +110,7 @@ public class FolderActivity extends AppCompatActivity {
             Folder folder = new Folder(input.getText().toString());
             folder.save();
             List<Folder> allFolders = folderDAO.getAllFolders();
-            if (editFlag) {
-                displayEditList(allFolders);
-            } else {
-                displayList(allFolders);
-            }
+            displayList(allFolders);
         });
         builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
         builder.show();
@@ -92,14 +118,13 @@ public class FolderActivity extends AppCompatActivity {
 
     private void handleEditBtnOnClick() {
         if (editFlag) {
-            displayList(folderDAO.getAllFolders());
             editBtn.setText("Bearbeiten");
             editFlag = false;
         } else {
-            displayEditList(folderDAO.getAllFolders());
             editBtn.setText("Fertig");
             editFlag = true;
         }
+        displayList(folderDAO.getAllFolders());
     }
 
     @Override
