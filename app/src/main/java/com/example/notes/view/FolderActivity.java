@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.widget.Button;
@@ -35,16 +36,18 @@ public class FolderActivity extends AppCompatActivity {
         List<Folder> allFolders = folderDAO.getAllFolders();
         recyclerView = findViewById(R.id.folderList);
 
-        editBtn = (Button) findViewById(R.id.editBtn);
+        editBtn = findViewById(R.id.editBtn);
         editBtn.setOnClickListener(v -> handleEditBtnOnClick());
 
-        final FloatingActionButton createNewFolderBtn = (FloatingActionButton) findViewById(R.id.createNewFolderBtn);
+        final FloatingActionButton createNewFolderBtn = findViewById(R.id.createNewFolderBtn);
         createNewFolderBtn.setOnClickListener(v -> handleCreateNewFolderBtnOnClick());
 
-        final FloatingActionButton createNewNoteBtn = (FloatingActionButton) findViewById(R.id.createNewNoteBtn);
+        final FloatingActionButton createNewNoteBtn = findViewById(R.id.createNewNoteBtn);
         createNewNoteBtn.setOnClickListener(v -> handleCreateNewNoteBtnOnClick());
         displayList(allFolders);
+
     }
+
 
     private void displayList(List<Folder> folderList) {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

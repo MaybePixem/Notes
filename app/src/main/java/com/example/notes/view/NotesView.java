@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.notes.R;
 
-public class NotizView extends AppCompatActivity {
+public class NotesView extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notiz_view);
+        setContentView(R.layout.activity_notes_view);
     }
 }

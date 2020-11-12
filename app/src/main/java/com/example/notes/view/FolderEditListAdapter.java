@@ -25,8 +25,8 @@ public class FolderEditListAdapter extends RecyclerView.Adapter<FolderEditListAd
         public ViewHolder(View itemView) {
             super(itemView);
 
-            nameTextView = (TextView) itemView.findViewById(R.id.folderName);
-            deleteBtn = (Button) itemView.findViewById(R.id.deleteBtn);
+            nameTextView = itemView.findViewById(R.id.folderName);
+            deleteBtn = itemView.findViewById(R.id.deleteBtn);
             deleteBtn.setOnClickListener(v -> {
                 int position = getAdapterPosition();
                 Folder folder = folderList.get(position);

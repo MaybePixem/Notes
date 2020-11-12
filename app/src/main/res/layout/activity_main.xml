@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.FolderActivity" >
-
     <Button
         android:id="@+id/editBtn"
         android:layout_width="wrap_content"

@@ -1,6 +1,7 @@
 package com.example.notes.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,13 @@ public class FolderListAdapter extends RecyclerView.Adapter<FolderListAdapter.Vi
         public ViewHolder(View itemView) {
             super(itemView);
 
-            nameTextView = (TextView) itemView.findViewById(R.id.folderName);
+            nameTextView = itemView.findViewById(R.id.folderName);
+            nameTextView.setOnClickListener(v -> {
+                Intent intent = new Intent(v.getContext(), NotesView.class);
+                intent.putExtra("folderId", folderList.get(getAdapterPosition()).getName());
+                v.getContext().startActivity(intent);
+            });
+
         }
     }
 
