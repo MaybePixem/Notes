@@ -25,6 +25,7 @@ public class NotesView extends AppCompatActivity {
     private void handleCreateNewNoteBtnOnClick() {
         Intent intent = new Intent(this, NoteTextView.class);
         intent.putExtra("noteId", 1);
+        intent.putExtra("folderId", getIntent().getStringExtra("folderId"));
         startActivity(intent);
     }
 }

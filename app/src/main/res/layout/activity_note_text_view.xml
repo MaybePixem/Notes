@@ -34,6 +34,7 @@
         android:id="@+id/editTextTextMultiLine2"
         android:layout_width="357dp"
         android:layout_height="550dp"
+        android:autofillHints="Notiz"
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
@@ -50,9 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:autofillHints="Titel"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
