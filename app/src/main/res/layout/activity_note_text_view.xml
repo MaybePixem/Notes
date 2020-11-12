@@ -10,57 +10,50 @@
         android:id="@+id/createNewNoteBtn4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
+        android:contentDescription="@string/createNewNoteBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@android:drawable/ic_menu_edit"
-        android:contentDescription="@string/createNewNoteBtn" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="105dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="280dp"
-        android:layout_marginBottom="6dp"
-        app:icon="@drawable/abc_vector_test"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="362dp"
-        android:layout_height="575dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="6dp"
-        android:text="@string/noteTextView"
-        app:layout_constraintBottom_toTopOf="@+id/createNewNoteBtn4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="256dp"
-        android:layout_marginBottom="17dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
         android:clickable="true"
+        android:contentDescription="@string/addpicturebutton"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/createNewNoteBtn4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@android:drawable/ic_menu_camera"
-        android:contentDescription="@string/addpicturebutton" />
+        app:srcCompat="@android:drawable/ic_menu_camera" />
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine2"
+        android:layout_width="357dp"
+        android:layout_height="550dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

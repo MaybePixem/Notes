@@ -11,7 +11,10 @@
         android:theme="@style/Theme.Notes">
         <activity
             android:name=".view.NotesView"
-            android:parentActivityName=".view.FolderActivity"></activity>
+            android:parentActivityName=".view.FolderActivity" />
+        <activity
+            android:name=".view.NoteTextView"
+            android:parentActivityName=".view.NotesView" />
         <activity android:name=".view.FolderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
