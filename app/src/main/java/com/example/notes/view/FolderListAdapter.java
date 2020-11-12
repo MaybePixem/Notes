@@ -25,7 +25,7 @@ public class FolderListAdapter extends RecyclerView.Adapter<FolderListAdapter.Vi
 
             nameTextView = itemView.findViewById(R.id.folderName);
             nameTextView.setOnClickListener(v -> {
-                Intent intent = new Intent(v.getContext(), NotesView.class);
+                Intent intent = new Intent(v.getContext(), NotesActivity.class);
                 intent.putExtra("folderId", folderList.get(getAdapterPosition()).getName());
                 v.getContext().startActivity(intent);
             });

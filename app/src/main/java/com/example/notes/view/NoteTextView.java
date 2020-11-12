@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.notes.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class NoteTextView extends AppCompatActivity {
 
@@ -38,7 +37,7 @@ public class NoteTextView extends AppCompatActivity {
     }
 
     private void navigateBackToNotes() {
-        Intent intent = new Intent(this, NotesView.class);
+        Intent intent = new Intent(this, NotesActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("folderId", folderId);

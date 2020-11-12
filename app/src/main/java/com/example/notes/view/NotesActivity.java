@@ -9,7 +9,7 @@ import android.widget.TextView;
 import com.example.notes.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class NotesView extends AppCompatActivity {
+public class NotesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
