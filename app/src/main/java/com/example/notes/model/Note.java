@@ -2,22 +2,20 @@ package com.example.notes.model;
 
 import com.orm.SugarRecord;
 
-import java.util.List;
-
 public class Note extends SugarRecord {
 
     private String title;
     private String text;
-    private List<String> imagePaths;
+    private String imagePath;
     private String folder;
 
     public Note() {
     }
 
-    public Note(String title, String text, List<String> imagePaths, String folder) {
+    public Note(String title, String text, String imagePath, String folder) {
         this.title = title;
         this.text = text;
-        this.imagePaths = imagePaths;
+        this.imagePath = imagePath;
         this.folder = folder;
     }
 
@@ -45,11 +43,11 @@ public class Note extends SugarRecord {
         this.text = text;
     }
 
-    public List<String> getImagePaths() {
-        return imagePaths;
+    public String getImagePath() {
+        return imagePath;
     }
 
-    public void setImagePaths(List<String> imagePaths) {
-        this.imagePaths = imagePaths;
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }
