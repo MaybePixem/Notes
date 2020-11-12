@@ -27,12 +27,16 @@ public class NoteTextView extends AppCompatActivity {
         TextView textField = findViewById(R.id.editTextTextMultiLine2);
         FloatingActionButton saveTextButton = findViewById(R.id.saveTextButton);
 
-        // saveTextButton.setVisibility(View.INVISIBLE);
-        if (textField.isFocused()) {
-            System.out.println("textField is focused");
-            saveTextButton.setClickable(true);
-            saveTextButton.setVisibility(View.VISIBLE);
-        }
+        textField.setOnFocusChangeListener((view, hasFocus) -> {
+            if (hasFocus) {
+                saveTextButton.setClickable(true);
+                saveTextButton.setVisibility(View.VISIBLE);
+            } else {
+
+                saveTextButton.setClickable(false);
+                saveTextButton.setVisibility(View.INVISIBLE);
+            }
+        });
     }
 
 

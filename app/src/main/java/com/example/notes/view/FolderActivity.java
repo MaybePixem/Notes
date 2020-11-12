@@ -14,8 +14,11 @@ import android.widget.EditText;
 import com.example.notes.R;
 import com.example.notes.data.FolderDAO;
 import com.example.notes.model.Folder;
+import com.example.notes.model.Note;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.orm.SchemaGenerator;
 import com.orm.SugarContext;
+import com.orm.SugarDb;
 
 import java.util.List;
 
@@ -45,7 +48,6 @@ public class FolderActivity extends AppCompatActivity {
         final FloatingActionButton createNewNoteBtn = findViewById(R.id.createNewNoteBtn);
         createNewNoteBtn.setOnClickListener(v -> handleCreateNewNoteBtnOnClick());
         displayList(allFolders);
-
     }
 
 
@@ -107,4 +109,7 @@ public class FolderActivity extends AppCompatActivity {
         displayList(allFolders);
     }
 
+    public void onTerminate() {
+        SugarContext.terminate();
+    }
 }

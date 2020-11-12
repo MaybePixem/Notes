@@ -69,13 +69,14 @@
         android:layout_marginStart="22dp"
         android:layout_marginTop="14dp"
         android:layout_marginEnd="24dp"
+        android:visibility="invisible"
+        app:backgroundTint="@color/green"
+        app:borderWidth="0dp"
         app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_save"
-        app:backgroundTint="@color/green"
-        app:borderWidth="0dp"/>
+        app:srcCompat="@android:drawable/ic_menu_save" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
