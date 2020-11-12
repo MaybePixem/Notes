@@ -48,6 +48,12 @@ public class NoteTextView extends AppCompatActivity {
                 saveTextButton.setVisibility(View.INVISIBLE);
             }
         });
+
+        saveTextButton.setOnClickListener(v -> {
+            note.setText(textField.getText().toString());
+            note.setTitle(titleText.getText().toString());
+            note.save();
+        });
     }
 
 
