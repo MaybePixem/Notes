@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Notes</string>
+    <string name="noteTextView">TextView</string>
+    <string name="createNewNoteBtn">Create New Note Button</string>
+    <string name="addpicturebutton">addPictureButton</string>
+    <string name="bearbeiten">Bearbeiten</string>
 </resources>
