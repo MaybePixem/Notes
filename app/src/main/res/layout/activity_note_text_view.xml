@@ -31,9 +31,9 @@
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine2"
-        android:layout_width="357dp"
-        android:layout_height="550dp"
+        android:id="@+id/noteTxt"
+        android:layout_width="359dp"
+        android:layout_height="533dp"
         android:autofillHints="Notiz"
         android:ems="10"
         android:gravity="start|top"
@@ -42,11 +42,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2"
+        app:layout_constraintTop_toBottomOf="@+id/titleTxt"
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/titleTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -72,9 +72,9 @@
         android:visibility="invisible"
         app:backgroundTint="@color/green"
         app:borderWidth="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextMultiLine2"
+        app:layout_constraintBottom_toTopOf="@+id/noteTxt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2"
+        app:layout_constraintStart_toEndOf="@+id/titleTxt"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_save" />
 

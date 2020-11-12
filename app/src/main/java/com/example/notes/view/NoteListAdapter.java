@@ -27,6 +27,7 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.ViewHo
             nameTextView.setOnClickListener(v -> {
                 Intent intent = new Intent(v.getContext(), NoteTextView.class);
                 intent.putExtra("folderId", noteList.get(getAdapterPosition()).getFolder());
+                intent.putExtra("noteId", noteList.get(getAdapterPosition()).getId().toString());
                 v.getContext().startActivity(intent);
             });
 

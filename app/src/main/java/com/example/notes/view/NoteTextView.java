@@ -3,29 +3,40 @@ package com.example.notes.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.notes.R;
+import com.example.notes.data.NoteDAO;
+import com.example.notes.model.Note;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import java.sql.SQLOutput;
 
 public class NoteTextView extends AppCompatActivity {
 
     private String folderId;
+    private Note note;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_note_text_view);
         folderId = getIntent().getStringExtra("folderId");
+        NoteDAO noteDAO = new NoteDAO();
+        if (getIntent().getStringExtra("noteId") != null) {
+            note = noteDAO.getNoteById(Long.parseLong(getIntent().getStringExtra("noteId")));
+        } else {
+            note = new Note();
+            note.setFolder(folderId);
+        }
 
-        TextView textField = findViewById(R.id.editTextTextMultiLine2);
+        TextView textField = findViewById(R.id.noteTxt);
+        TextView titleText = findViewById(R.id.titleTxt);
+        titleText.setText(note.getTitle());
+        textField.setText(note.getText());
         FloatingActionButton saveTextButton = findViewById(R.id.saveTextButton);
+
 
         textField.setOnFocusChangeListener((view, hasFocus) -> {
             if (hasFocus) {

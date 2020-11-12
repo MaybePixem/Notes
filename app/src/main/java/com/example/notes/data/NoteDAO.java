@@ -10,13 +10,13 @@ public class NoteDAO {
 
     public List<Note> getAllNotesFromFolder(String folderId) {
         try {
-            return SugarRecord.findWithQuery(Note.class, "SELECT * FROM Note where folder = '" + folderId+"'");
-        }catch (Exception e){
+            return SugarRecord.findWithQuery(Note.class, "SELECT * FROM Note where folder = '" + folderId + "'");
+        } catch (Exception e) {
             return new ArrayList<>();
         }
     }
 
-    public Note getNoteById(int id) {
+    public Note getNoteById(long id) {
         return SugarRecord.findById(Note.class, id);
     }
 
